@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Una página de amor dedicada a mi pareja, con nuestros momentos especiales y razones por las que la amo">
+    <meta name="keywords" content="amor, relación, aniversario, página romántica">
+    <title>Nuestro Rincón Digital - Para Mi Amor</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-black text-white transition-colors duration-500 font-inter">
+    <div id="loadingScreen" class="fixed inset-0 bg-black z-50 flex flex-col items-center justify-center transition-opacity duration-500">
+        <div class="heart-loader"></div>
+        <p class="mt-4 text-gray-300">Cargando nuestro amor...</p>
+    </div>
+
+    <div id="nightBackground" class="night-background fixed inset-0 -z-10 transition-opacity duration-1000">
+        <div class="stars-container"></div>
+        <div class="cometa"></div>
+        <div class="moon"></div>
+    </div>
+
+    <div class="music-player" id="musicPlayer">
+        <div class="music-info" id="musicInfo">Canción de amor</div>
+        <div class="music-controls">
+            <button class="music-btn" id="prevBtn"><i class="fas fa-step-backward"></i></button>
+            <button class="music-btn" id="playBtn"><i class="fas fa-play"></i></button>
+            <button class="music-btn" id="nextBtn"><i class="fas fa-step-forward"></i></button>
+            <button class="music-btn" id="volumeBtn"><i class="fas fa-volume-up"></i></button>
+            <button class="music-btn" id="uploadSongBtn" title="Subir canción"><i class="fas fa-upload"></i></button>
+            <input type="file" id="musicUpload" accept="audio/*" class="hidden" />
+        </div>
+    </div>
+
+    <header class="portada h-screen flex flex-col justify-center items-center text-center text-white relative overflow-hidden" role="banner">
+        <div class="absolute inset-0 bg-gradient-to-br from-red-900/60 via-black/70 to-red-800/50 z-10"></div>
+        <div class="floating-hearts"></div>
+        
+        <div class="z-20 max-w-4xl px-4">
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 font-playfair text-shadow-lg animate-fade-in-up">
+                Para Mi Amor
+            </h1>
+            <p class="text-xl md:text-2xl lg:text-3xl mb-8 text-shadow animate-fade-in-up delay-300">
+                Cada día contigo es una página nueva en nuestra historia
+            </p>
+            <div class="animate-fade-in-up delay-500">
+                <button id="scrollToContent" class="bg-red-700/70 backdrop-blur-sm text-white py-3 px-8 rounded-full font-semibold text-lg border-2 border-red-500/50 hover:bg-red-600/70 transition-all duration-300 transform hover:scale-105">
+                    Descubre Más
+                </button>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </header>
+
+    <nav class="fixed top-0 w-full bg-black/90 backdrop-blur-sm py-4 z-40 shadow-lg transition-all duration-500" role="navigation" aria-label="Navegación principal">
+        <div class="container mx-auto px-4">
+            <ul class="flex justify-center space-x-4 md:space-x-8 flex-wrap">
+                <li><a href="#inicio" class="nav-link text-white font-medium hover:text-red-500 transition-colors py-2 px-3 rounded-lg" data-section="inicio">Inicio</a></li>
+                <li><a href="#historia" class="nav-link text-white font-medium hover:text-red-500 transition-colors py-2 px-3 rounded-lg" data-section="historia">Nuestra Historia</a></li>
+                <li><a href="#razones" class="nav-link text-white font-medium hover:text-red-500 transition-colors py-2 px-3 rounded-lg" data-section="razones">Razones</a></li>
+                <li><a href="#galeria" class="nav-link text-white font-medium hover:text-red-500 transition-colors py-2 px-3 rounded-lg" data-section="galeria">Galería</a></li>
+                <li><a href="#promesas" class="nav-link text-white font-medium hover:text-red-500 transition-colors py-2 px-3 rounded-lg" data-section="promesas">Promesas</a></li>
+                <li><a href="#carta" class="nav-link text-white font-medium hover:text-red-500 transition-colors py-2 px-3 rounded-lg" data-section="carta">Carta</a></li>
+                <li><a href="#juego" class="nav-link text-white font-medium hover:text-red-500 transition-colors py-2 px-3 rounded-lg" data-section="juego">Juego</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section id="inicio" class="py-20 px-4 min-h-screen flex flex-col justify-center items-center">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 text-red-500">Mi Razón para Sonreír</h2>
+        <div class="max-w-4xl text-center space-y-6">
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                Desde que llegaste a mi vida, todo tiene más color. Eres la luz que ilumina mis días y la calma que tranquiliza mis noches. Contigo he descubierto un amor que no conocía, un sentimiento que crece con cada sonrisa, cada mirada y cada momento compartido.
+            </p>
+            <p class="text-lg md:text-xl text-gray-300 leading-relaxed">
+                Eres mi hoy y siempre, mi lugar favorito en el mundo, mi razón para sonreír cada mañana. Nuestro amor es el capítulo más hermoso de mi vida, y estoy emocionado por todas las páginas que aún tenemos por escribir juntos.
+            </p>
+        </div>
+        <div class="mt-8 flex items-center justify-center gap-6 text-center">
+            <div>
+                <div class="text-3xl font-bold text-red-500" id="anos">0</div>
+                <div class="text-sm text-gray-500">Años</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-red-500" id="meses">0</div>
+                <div class="text-sm text-gray-500">Meses</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-red-500" id="dias">0</div>
+                <div class="text-sm text-gray-500">Días</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-red-500" id="horas">0</div>
+                <div class="text-sm text-gray-500">Horas</div>
+            </div>
+            <div>
+                <div class="text-3xl font-bold text-red-500" id="minutos">0</div>
+                <div class="text-sm text-gray-500">Minutos</div>
+            </div>
+        </div>
+
+        <button id="botonSorpresa" class="mt-10 bg-gradient-to-r from-red-700 to-red-900 text-white py-3 px-8 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300">
+            ¡Sorpresa de Amor!
+        </button>
+    </section>
+
+    <section id="historia" class="py-20 px-4 min-h-screen bg-gray-900">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-red-500">Nuestra Historia</h2>
+        <div class="timeline max-w-6xl mx-auto">
+            <div class="timeline-item">
+                <div class="timeline-content bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="timeline-date font-bold text-red-500 mb-2">6 de Octubre, 2025</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">En Riwi</h3>
+                    <p class="text-gray-300">El inicio de algo maravilloso en Riwi, donde nuestra historia comenzó.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="timeline-date font-bold text-red-500 mb-2">6 de Octubre, 2025</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Proyecto Riwi</h3>
+                    <p class="text-gray-300">Construyendo juntos, creciendo juntos y compartiendo metas.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content bg-gray-800 p-6 rounded-xl shadow-lg">
+                    <div class="timeline-date font-bold text-red-500 mb-2">6 de Octubre, 2025</div>
+                    <h3 class="text-xl font-semibold mb-3 text-white">Portal del Prado</h3>
+                    <p class="text-gray-300">Un escenario testigo de nuestra felicidad y momentos compartidos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="razones" class="py-20 px-4 min-h-screen">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-red-500">10 Razones por las que Te Amo</h2>
+        <div class="razones-container max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Sonrisa</h3>
+                <p class="text-gray-300">Tu sonrisa ilumina mis días más oscuros y hace que todo parezca mejor.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Forma de Ser</h3>
+                <p class="text-gray-300">Eres auténtica, genuina y no tienes miedo de ser tú misma.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Compasión</h3>
+                <p class="text-gray-300">La forma en que te preocupas por los demás muestra la belleza de tu corazón.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Sentido del Humor</h3>
+                <p class="text-gray-300">Nunca dejas de hacerme reír, incluso en los momentos más difíciles.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Inteligencia</h3>
+                <p class="text-gray-300">Admiro tu forma de pensar y cómo abordas los desafíos de la vida.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Apoyo Incondicional</h3>
+                <p class="text-gray-300">Siempre estás ahí para mí, en las buenas y en las malas.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Paciencia</h3>
+                <p class="text-gray-300">Tienes una capacidad infinita para entender y perdonar.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Creatividad</h3>
+                <p class="text-gray-300">La forma en que ves el mundo es única e inspiradora.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Tu Fortaleza</h3>
+                <p class="text-gray-300">Eres más fuerte de lo que crees y me inspiras a ser mejor.</p>
+            </div>
+            <div class="razon razon-card bg-gray-800 p-6 rounded-xl shadow-lg transition-transform duration-300 hover:-translate-y-2 cursor-pointer">
+                <h3 class="text-xl font-semibold mb-3 text-red-500">Simplemente Eres Tú</h3>
+                <p class="text-gray-300">Te amo por todo lo que eres y por todo lo que haces que yo sea.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="galeria" class="py-20 px-4 min-h-screen bg-gray-900">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 text-red-500">Nuestros Momentos</h2>
+        <p class="text-center text-lg text-gray-300 mb-12 max-w-2xl mx-auto">Una colección de nuestros recuerdos más preciados juntos</p>
+        
+        <div class="personal-gallery max-w-6xl mx-auto">
+            <!-- Las imágenes se cargarán dinámicamente desde JavaScript -->
+        </div>
+        
+        <div class="text-center mt-8">
+            <button id="addPhotoBtn" class="bg-red-700 text-white py-2 px-6 rounded-lg font-medium hover:bg-red-600 transition-colors">
+                <i class="fas fa-plus mr-2"></i>Añadir Foto
+            </button>
+            <input type="file" id="photoUpload" accept="image/*" class="hidden">
+        </div>
+    </section>
+
+    <section id="promesas" class="py-20 px-4 min-h-screen">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-red-500">Mis Promesas Para Ti</h2>
+        <div class="max-w-4xl mx-auto">
+            <div class="promise-card animate-slide-in-left">
+                <h3><i class="fas fa-heart"></i> Prometo Amarte Siempre</h3>
+                <p>En los días soleados y en las noches tormentosas, mi amor por ti permanecerá inquebrantable. Prometo recordarte cada día lo especial que eres para mí.</p>
+            </div>
+            <div class="promise-card animate-slide-in-right">
+                <h3><i class="fas fa-hand-holding-heart"></i> Prometo Escucharte</h3>
+                <p>Tus pensamientos, tus sueños y tus preocupaciones siempre tendrán un lugar seguro conmigo. Prometo escucharte con el corazón abierto y la mente dispuesta.</p>
+            </div>
+            <div class="promise-card animate-slide-in-left">
+                <h3><i class="fas fa-laugh-beam"></i> Prometo Hacerte Reír</h3>
+                <p>La vida puede ser difícil, pero prometo ser tu refugio de alegría. Haré todo lo posible para ver tu sonrisa brillar, incluso en los momentos más oscuros.</p>
+            </div>
+            <div class="promise-card animate-slide-in-right">
+                <h3><i class="fas fa-hands-helping"></i> Prometo Apoyarte</h3>
+                <p>Tus sueños son mis sueños. Prometo apoyarte en cada paso de tu camino, celebrar tus éxitos y animarte en tus desafíos.</p>
+            </div>
+            <div class="promise-card animate-slide-in-left">
+                <h3><i class="fas fa-infinity"></i> Prometo Ser Tu Compañero</h3>
+                <p>En esta aventura llamada vida, prometo caminar a tu lado. Juntos enfrentaremos lo que venga, creando recuerdos que atesoraremos por siempre.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="carta" class="py-20 px-4 min-h-screen bg-gray-900">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-16 text-red-500">Mi Carta Para Ti</h2>
+        <div class="love-letter">
+            <div class="letter-content">
+                <p class="text-lg mb-4 font-bold">Mi querida Katerin,</p>
+                <p class="mb-4">Resulta verdaderamente difícil encontrar palabras que logren capturar completamente lo que siento por ti. Desde el instante en que irrumpiste en mi vida, todo a mi alrededor ha cobrado un significado completamente renovado y especial. Eres esa melodía cautivadora que ilumina mis días con alegría, esa calma que convierte mis noches en remansos de paz y tranquilidad, y la razón por la cual mi corazón late con una intensidad renovada y vigorosa.</p>
+                <p class="mb-4">Cada instante que comparto contigo se convierte en un tesoro inestimablemente precioso. Tu risa es, sin lugar a dudas, la música más intensa y dulce que mis oídos han tenido el privilegio de escuchar; tu mirada se ha transformado en el refugio más seguro y acogedor que he tenido el honor de encontrar, y tu amor, sin duda alguna, es el regalo más valioso y significativo que he tenido la fortuna de recibir en mi vida.</p>
+                <p class="mb-4">A tu lado he aprendido, con asombro y gratitud, que el amor verdadero no se mide en gestos grandilocuentes o eventos extraordinarios, sino en esos pequeños y cotidianos detalles: en el simple pero significativo gesto de tu mano buscándome, en la brillante sonrisa que enciende tu rostro cuando nuestras miradas se cruzan, en la forma en que me comprendes de manera intuitiva, como si nuestras almas mismas se comunicaran sin la intervención de palabras.</p>
+                <p class="mb-4">Te hago la promesa de amarte incondicionalmente en cada una de las etapas de nuestra vida compartida, en la frescura de la juventud y en la serenidad de la madurez, en la salud resplandeciente y en la enfermedad inevitable, en los días de abundante alegría y en los momentos de tristeza compartida. Porque contigo, he descubierto y sentido que he encontrado mi verdadero hogar, mi anhelada paz y esa eternidad que siempre había soñado.</p>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <button id="printLetterBtn" class="bg-red-700 text-white py-2 px-6 rounded-lg font-medium hover:bg-red-600 transition-colors mr-4">
+                <i class="fas fa-print mr-2"></i>Imprimir Carta
+            </button>
+            <button id="shareLetterBtn" class="bg-blue-500 text-white py-2 px-6 rounded-lg font-medium hover:bg-blue-600 transition-colors">
+                <i class="fas fa-share-alt mr-2"></i>Compartir
+            </button>
+        </div>
+    </section>
+
+    <section id="juego" class="py-20 px-4 min-h-screen">
+        <h2 class="text-4xl md:text-5xl font-bold text-center mb-8 text-red-500">¿Cuánto Sabes de Nuestra Relación?</h2>
+        <p class="text-center text-lg text-gray-300 mb-12 max-w-2xl mx-auto">Pon a prueba tus conocimientos sobre nuestra historia juntos</p>
+        
+        <div class="quiz-container">
+            <div class="quiz-question" id="quizQuestion">¿En qué fecha comenzamos oficialmente nuestra relación?</div>
+            <div class="quiz-options" id="quizOptions">
+                <!-- Las opciones se cargarán dinámicamente -->
+            </div>
+            <button id="nextQuestionBtn" class="w-full bg-red-700 text-white py-3 rounded-lg font-medium hover:bg-red-600 transition-colors hidden">Siguiente Pregunta</button>
+            <div class="quiz-result hidden" id="quizResult"></div>
+        </div>
+        
+        <div class="text-center mt-8">
+            <button id="startQuizBtn" class="bg-green-700 text-white py-2 px-6 rounded-lg font-medium hover:bg-green-600 transition-colors">
+                Comenzar Juego
+            </button>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center bg-gray-900">
+        <p class="text-gray-300">Hecho con ❤️ para ti, mi amor eterno</p>
+    </footer>
+
+    <div class="fixed bottom-24 right-6 flex flex-col space-y-4 z-50">
+        <button class="bg-red-700 text-white p-4 rounded-full shadow-lg hover:bg-red-600 transition-all duration-300 transform hover:scale-110" id="scrollToTop" aria-label="Volver al inicio">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 15l7-7 7 7"></path>
+            </svg>
+        </button>
+    </div>
+
+    <div class="image-modal" id="imageModal">
+        <div class="modal-content">
+            <button class="close-modal" id="closeModal">
+                <i class="fas fa-times"></i>
+            </button>
+            <img id="modalImage" src="" alt="Imagen ampliada">
+        </div>
+    </div>
+
+    <div class="heart-rain" id="heartRain"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
